@@ -1,17 +1,18 @@
-CS455 Module 1 PR5: Ballistics++  
+CS455 Module 2 DV1: Dijkstra   
 Author: Georgiy Antonovich Bondar  
 
-Go to https://keshakot.github.io/CS455_M1.PR5/ to play the game :)
+Go to https://keshakot.github.io/CS455_M2.DV1/ to play the game :)
 
 # Behaviors
-Projectile Firer: Assets/Scripts/ProjectileFirer.cs   
-Improved Projectile Firer: Assets/Scripts/ProjectileFirer_Improved.cs  
+Dijkstra Path Follower: Assets/Scripts/PathFollower_Dijkstra.cs   
+Dijkstra's Algorithm: Assets/Scripts/Dijkstra/Dijkstra.cs   
+Dijkstra Graph Nodes: Assets/Scripts/Dijkstra/Node.cs   
 
-# Changes
-1. Created an improved projectile firer which adjusts for misses and allows moving targets to be hit.  
-2. Projectiles fired by this improved firer will, when they hit their target point, report to the firer the distance by which they missed their target. The firer then adjusts the lead accordingly, eventually hitting the moving target.  
+# Notes
+1. The Dijkstra Path Follower first runs Dijkstra's Algorithm to determine the best path to the target, then passes that path to the previously developed PathFollower steering behavior.  
+2. Each Node has a list of nodes it has a path to, entered manually.   
 
 # Bugs/issues
-1. If the target is accelerating it will never be hit, for the lead will always be increasing.
-2. Target aquisition is slow and not as precise as would be desired - it takes several attempts to 'home in' on the target.   
+1. The paths between nodes are in no way displayed to the user - this makes the path the node takes appear somewhat arbitrary, for one does not know what paths actually exist.  
+2. Each node has to be added to the Dikstra Path Follower manually or else it'll crash.  
  
